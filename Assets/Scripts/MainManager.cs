@@ -72,5 +72,14 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        GameManager.Instance.SetBestScore(m_Points);
+        GameManager.Instance.SaveJSON();
+    }
+
+    public void BackMenu()
+    {
+        GameManager.Instance.SetBestScore(m_Points);
+        GameManager.Instance.SaveJSON();
+        SceneManager.LoadScene(0);
     }
 }
